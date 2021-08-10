@@ -21,7 +21,7 @@ This tool uses the awesome [solaredge_modbus](https://github.com/nmakel/solaredg
 ### SolCast configuration
 Using SolCast is optional, but it could result in higher quality data than the one provided by the DWD. To use it, you have to register your site on their website and then configure the following variables:
 * Set `use_solcast` to `True` in order to enable SolCast queries.
-* Set `solcast_reporting_interva` to a value greater than zero if you want to report your production data to SolCast to enable them to fine-tune their forecast data for you.
+* Set `solcast_reporting_interval` to a value greater than zero if you want to report your production data to SolCast to enable them to fine-tune their forecast data for you.
 * Set `solcast_api_key` and `solcast_resource_id` to the API key and resource ID respectively which you can get from your SolCast account page.
 
 ## Running SolarEdge Predictive Charging
