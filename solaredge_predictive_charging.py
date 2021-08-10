@@ -12,7 +12,7 @@ interval_seconds = 10		# update interval
 use_solcast = True		# Set to False in order to use DWD MOSMIX only, otherwise use DWD MOSMIX as fallback
 solcast_reporting_interval = 5	# report interval in minutes
 solcast_api_key = ""		# Enter SolCast API key here 
-solcast_resource_id = ""		# Enter SolCast Resource ID here
+solcast_resource_id = ""	# Enter SolCast Resource ID here
 
 import argparse
 import requests
