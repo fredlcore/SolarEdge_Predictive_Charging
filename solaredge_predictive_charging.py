@@ -44,8 +44,7 @@ try:
 except KeyError:
     try:
         print (f"'{nearest_city}' not found in database.")
-        input("Hit 'Enter' to print a list and select by number\nor fill in (only!) the city's name in the 'nearest_city' variable\nat the beginning of this script or press CTRL+C to abort.\n
-")
+        input("Hit 'Enter' to print a list and select by number\nor fill in (only!) the city's name in the 'nearest_city' variable\nat the beginning of this script or press CTRL+C to abort.\n")
     except KeyboardInterrupt as err:
         quit()
     entries = []
@@ -235,8 +234,7 @@ if __name__ == "__main__":
                     post_peak = False
                     old_day = day
 
-                print(f"{dt_string};{pvProduction};{avg_production:.4f};{gridImportExport:.1f};{batteryImportExport};{householdConsumption};{avg_consumption:.1f};{batterySoe};{batteryNeeded:.
-0f};{remaining_sunshine:.0f};{post_peak};{mode}", flush=True)
+                print(f"{dt_string};{pvProduction};{avg_production:.4f};{gridImportExport:.1f};{batteryImportExport};{householdConsumption};{avg_consumption:.1f};{batterySoe};{batteryNeeded:.0f};{remaining_sunshine:.0f};{post_peak};{mode}", flush=True)
 
                 if (avg_production_counter >= ((solcast_reporting_interval * 60) / interval_seconds)):
                     print ("Sending average production to Solcast...")
