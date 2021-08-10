@@ -10,7 +10,7 @@ adjustment_factor = 0.7		# Adjustment factor
 min_battery_level = 20		# minimum battery level to be maintained in percent
 interval_seconds = 10		# update interval
 use_solcast = True		# Set to False in order to use DWD MOSMIX only, otherwise use DWD MOSMIX as fallback
-solcast_reporting_interval = 5	# report interval in minutes
+solcast_reporting_interval = 5	# report interval in minutes, set to 0 to disable reporting
 solcast_api_key = ""		# Enter SolCast API key here 
 solcast_resource_id = ""	# Enter SolCast Resource ID here
 
@@ -236,7 +236,7 @@ if __name__ == "__main__":
 
                 print(f"{dt_string};{pvProduction};{avg_production:.4f};{gridImportExport:.1f};{batteryImportExport};{householdConsumption};{avg_consumption:.1f};{batterySoe};{batteryNeeded:.0f};{remaining_sunshine:.0f};{post_peak};{mode}", flush=True)
 
-                if (avg_production_counter >= ((solcast_reporting_interval * 60) / interval_seconds)):
+                if (avg_production_counter >= ((solcast_reporting_interval * 60) / interval_seconds) and solcast_reporting_interval > 0):
                     print ("Sending average production to Solcast...")
                     current_time_iso = datetime.now().astimezone(pytz.timezone(city.timezone)).replace(microsecond=0).isoformat()
                     solcast_json = {"measurement": {"period_end": current_time_iso, "period": solcast_period, "total_power": avg_production}}
